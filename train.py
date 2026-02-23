@@ -10,7 +10,7 @@ import os
 import pandas as pd
 from datetime import datetime
 from GetDataLoader import GetDataLoader
-from Modle import SentimentClassifier, LSTMSentimentClassifier, GRUSentimentClassifier, BiGRUSentimentClassifier
+from model import SentimentClassifier, LSTMSentimentClassifier, GRUSentimentClassifier, BiGRUSentimentClassifier
 import json
 # ===== 自動組合實驗設定 =====
 AUTO_EXPERIMENT = True  # 設為 True 啟動自動組合實驗，False 則使用下方單一配置
@@ -48,17 +48,8 @@ VAL_PATH = None  # 驗證資料路徑 (None 表示從訓練資料中分割)
 BATCH_SIZE = 200
 LEARNING_RATE = 2e-5
 NUM_EPOCHS = 50
-HIDDEN_SIZE = 256
-NUM_CLASSES = 2  # 正面/負面
-# DROPOUT_RATE = 0.3  # Dropout 率，可調整為 0.1, 0.2, 0.3, 0.5
-
-# # 學習率調度器設定
-# USE_SCHEDULER = True  # 是否使用學習率調度器
-# SCHEDULER_TYPE = 'cosine'  # 'cosine', 'step', 'plateau', 'exponential'
-# T_MAX = NUM_EPOCHS  # CosineAnnealingLR 的周期
-
-# # 模型選擇: 'simple' 或 'lstm'
-# MODEL_TYPE = 'simple'  # 可改為 'lstm'
+# HIDDEN_SIZE = 256
+NUM_CLASSES = 4  # 正面/負面
 
 # 實驗結果主資料夾
 EXPERIMENTS_DIR = 'Experimental_results'
